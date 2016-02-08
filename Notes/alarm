@@ -1,0 +1,28 @@
+cat /etc/systemd/system/getty@tty1.service.d/override.conf
+cat .profile
+cat /etc/systemd/system/sysinit.target.wants/systemd-timesyncd.service
+/etc/systemd/system/sysinit.target.wants/systemd-timesyncd.service
+
+ffmpeg -f video4linux2 -y -input_format mjpeg -framerate 25 -video_size 640x480 -i /dev/video0 out.mpg -f xv alarmpi:1.0
+
+echo $DISPLAY
+
+ffmpeg -f video4linux2 -y -input_format mjpeg -framerate 25 -video_size 640x480 -i /dev/video0 out.mpg -f xv monitor0
+
+ ffmpeg -f video4linux2 -y -input_format mjpeg -framerate 25 -video_size 640x480 -i /dev/video0 out.mpg -f xv alarmpi:0.0
+
+sudo nano /etc/X11/xorg.conf.d/10-monitor.conf 
+sudo nano /etc/X11/xorg.conf.d/
+sudo nano /etc/systemd/system/getty@tty1.service.d/override.conf
+setterm -powerdown 2>&1 | exec cat -v 2>&1 | sed "s/\\^\\[/\\\\033/g"
+sudo nano  /etc/issue 
+
+sudo echo -ne "\033[9;0]"
+sudo echo -ne "\033[9;0]" >> /etc/issue
+sudo nano /etc/X11/xorg.conf.d/10-monitor.conf 
+
+ ls /etc/X11/xorg.conf.d/
+sudo nano /etc/X11/xorg.conf.d/
+sudo nano /etc/kbd/config
+
+ls /etc/systemd/system/
